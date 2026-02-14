@@ -1,0 +1,13 @@
+2001_Book_FundamentalsOfPowerElectronics.pdf
+assembly.ai
+assembly_images/
+.ipynb_checkpoints/
+jupyter
+/worksheets/*
+/.venv/*
+.DS_Store*
+plecs/
+*.html
+*.pdf
+*.csv
+
