@@ -1,0 +1,18 @@
+Task 3 Execution
+CH1: TP8, Vsh
+CH2: TP7, Vds
+4.01V
+7.00V
+9.02V
+
+
+Task 4
+CH1: TP5, Vgdr
+CH2: TP6, Vgate
+4.030V
+7.020V
+9.040V
+
+
+
+
