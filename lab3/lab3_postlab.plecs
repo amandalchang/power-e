@@ -29,7 +29,7 @@ Plecs {
   AssertionAction "1"
   FixedPointDatatypeOverride "1"
   InitializationCommands "Vg = 18.00\nV = 7.00\nPout = 12\n\n% measured switch"
-"ing frequency\nFs = 49300 \nTs = 1/Fs\n% measured inductance\nL = 17.17e-6 % "
+"ing frequency\nFs = 49300 \nTs = 1/Fs\n% measured inductance\nL = 17.20e-6 % "
 "average inductance\n\nC = 60e-6\n\n% Calculated outputs\nM = V/Vg\nR = V**2/P"
 "out\n% L = ((R*Ts*(1-M))/2)*(D/M)**2\nLcrit = (1-M)*R*(Ts/2)\nalpha = L/Lcrit"
 "\n\nk = 2*L/(Ts*R)\nIpk = ((k*(1-M))**0.5)*Ts*V/L\n\nD_dcm = M*sqrt(k)*sqrt(1"
