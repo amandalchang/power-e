@@ -9,4 +9,6 @@ jupyter
 plecs/
 *.html
 *.pdf
-
+*.csv
+*.jpeg
+*playground*
