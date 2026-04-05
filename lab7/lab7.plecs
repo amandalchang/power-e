@@ -31,13 +31,11 @@ Plecs {
   InitializationCommands "% Initialization Script\nVg = 18.00\nPout = 20\nFs ="
 " 50000\nTs = 1/Fs\n\n% Measured Values\nV0 = 9.99\na = 7/9\nD = 0.384236\nalp"
 "ha = 0.630819\nL = 1.980557814607988e-05\nIpk = 6.816\nL_leakage = 0.00039e-3"
-"\nL_sig1 = L_leakage\nL_sig2 = L_leakage\nVcp = V0/a + Vg + 13.15\nR0 = 5 % l"
-"oad resistor value\nC0 = 60e-6\nM0 = V0/Vg\n\n% Calculating referred values\n"
-"R = 1/a^2 * R0\nC = a^2 * C0\nV = 1/a * V0\nM = V0/(a*Vg)\n\n% peak current a"
-"nd energy lost through clamp\nWcp = (1/2)*(Ipk^2)*(L_leakage)*Vcp/(Vcp-V0)\nP"
-"cp = Wcp/Ts\nRcp = Vcp**2 / Pcp\n\ndelta = 0.1278 % voltage ripple\nCcp = 1/("
-"Rcp*delta)*(Ts-Ipk*(L_leakage)/(Vcp-V0))\n\n% Calculated Values\nV_comp = (3*"
-"Ipk + 26)/20"
+"\nL_sig = L_leakage/2\nVcp = V0/a + Vg + 13.15\nR0 = 5 % load resistor value"
+"\nC0 = 60e-6\nM0 = V0/Vg\n\n% Calculating referred values\nR = 1/a^2 * R0\nC "
+"= a^2 * C0\nV = 1/a * V0\nM = V0/(a*Vg)\n\n% snubber values\nCsb = 1.5e-9\nRs"
+"b_f = 22\nRsb_s = 220\n\n% clamp values\nCcp = 47e-9\nRcp = 3300\n\n% Calcula"
+"ted Values\nV_comp = (3*Ipk + 26)/20"
   InitialState  "1"
   SystemState   ""
   TaskingMode   "1"
@@ -62,7 +60,7 @@ Plecs {
   ScriptsDialogGeometry "[507 314 454 272]"
   ScriptsDialogSplitterPos "93"
   Schematic {
-    Location      [219, 138; 1238, 726]
+    Location      [219, 138; 1062, 726]
     ZoomFactor    0.995515
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -931,7 +929,7 @@ Plecs {
       Type          DCVoltageSource
       Name          "V_dc1"
       Show          off
-      Position      [885, 285]
+      Position      [745, 375]
       Direction     down
       Flipped       on
       LabelPosition east
@@ -945,7 +943,7 @@ Plecs {
       Type          Ground
       Name          "Ground4"
       Show          off
-      Position      [885, 330]
+      Position      [745, 420]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -954,7 +952,7 @@ Plecs {
       Type          Label
       Name          "Label1"
       Show          off
-      Position      [885, 245]
+      Position      [745, 335]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -1000,7 +998,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [88, 188; 973, 724]
+      Location      [402, 238; 1287, 774]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAJvAAABMPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAIQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAcAA"
 "ABQwAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAATAAAABmAP///wAAAAMAAAN1AAABUPw"
@@ -1008,7 +1006,7 @@ Plecs {
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":136,\"Labels\":[\""
+      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":196,\"Labels\":[\""
 "Delta\",\"Max\"],\"VisualIdxs\":[3,6]}"
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAQAAAAIC//8u4P//zMwAAAL//y7g5mb//wAAA"
 "AAAAQAAAAIAAAAAAAEAAAACAAAAAQAAAAEAAAABAAAAAgAAAAAAAQAAAAI/8AAAAAAAAD/wAAAAAA"
@@ -1315,6 +1313,7 @@ Plecs {
       Direction     down
       Flipped       on
       LabelPosition west
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "R"
         Value         "1"
@@ -1329,6 +1328,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition east
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "C"
         Value         "100e-6"
@@ -1348,6 +1348,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition north
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "Vf"
         Value         "0"
@@ -1394,52 +1395,12 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "L_sig1"
+        Value         "L_sig"
         Show          on
       }
       Parameter {
         Variable      "i_init"
         Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          Constant
-      Name          "Constant8"
-      Show          off
-      Position      [845, 65]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Frame         [-20, -10; 20, 10]
-      Parameter {
-        Variable      "Value"
-        Value         "Pcp"
-        Show          off
-      }
-      Parameter {
-        Variable      "DataType"
-        Value         "10"
-        Show          off
-      }
-    }
-    Component {
-      Type          Display
-      Name          "Display9"
-      Show          off
-      Position      [955, 65]
-      Direction     up
-      Flipped       off
-      LabelPosition south
-      Frame         [-41, -11; 41, 11]
-      Parameter {
-        Variable      "Notation"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "Precision"
-        Value         "4"
         Show          off
       }
     }
@@ -1525,12 +1486,62 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "L_sig2"
+        Value         "L_sig"
         Show          on
       }
       Parameter {
         Variable      "i_init"
         Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rsb_f"
+      Show          on
+      Position      [290, 400]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "R"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "Csb"
+      Show          on
+      Position      [250, 370]
+      Direction     right
+      Flipped       on
+      LabelPosition south
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "C"
+        Value         "100e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rsb_s"
+      Show          on
+      Position      [345, 400]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "R"
+        Value         "1"
         Show          off
       }
     }
@@ -1769,8 +1780,22 @@ Plecs {
       Branch {
         Points        [280, 440]
         Branch {
-          DstComponent  "UC2844"
-          DstTerminal   4
+          Points        [290, 440]
+          Branch {
+            Points        [345, 440]
+            Branch {
+              DstComponent  "UC2844"
+              DstTerminal   4
+            }
+            Branch {
+              DstComponent  "Rsb_s"
+              DstTerminal   2
+            }
+          }
+          Branch {
+            DstComponent  "Rsb_f"
+            DstTerminal   2
+          }
         }
         Branch {
           DstComponent  "Vm2"
@@ -1826,21 +1851,28 @@ Plecs {
       Type          Wire
       SrcComponent  "Q1"
       SrcTerminal   1
-      Points        [200, 360]
+      Points        [200, 370]
       Branch {
-        Points        [115, 360]
-        DstComponent  "Vm3"
+        DstComponent  "Csb"
         DstTerminal   1
       }
       Branch {
-        Points        [200, 330]
+        Points        [200, 360]
         Branch {
-          DstComponent  "D2"
+          Points        [115, 360]
+          DstComponent  "Vm3"
           DstTerminal   1
         }
         Branch {
-          DstComponent  "L2"
-          DstTerminal   2
+          Points        [200, 330]
+          Branch {
+            DstComponent  "D2"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "L2"
+            DstTerminal   2
+          }
         }
       }
     }
@@ -1925,13 +1957,6 @@ Plecs {
       }
     }
     Connection {
-      Type          Signal
-      SrcComponent  "Constant8"
-      SrcTerminal   1
-      DstComponent  "Display9"
-      DstTerminal   1
-    }
-    Connection {
       Type          Wire
       SrcComponent  "Am2"
       SrcTerminal   1
@@ -1974,6 +1999,21 @@ Plecs {
       Points        [325, 330; 325, 300]
       DstComponent  "Tr2"
       DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Csb"
+      SrcTerminal   2
+      Points        [290, 370]
+      Branch {
+        DstComponent  "Rsb_f"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [345, 370]
+        DstComponent  "Rsb_s"
+        DstTerminal   1
+      }
     }
     Annotation {
       Name          "<html><body>\n<p>X</p></body></html>"
