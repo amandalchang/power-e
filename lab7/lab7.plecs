@@ -1,5 +1,5 @@
 Plecs {
-  Name          "lab7_finalfinal"
+  Name          "lab7"
   Version       "4.9"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
@@ -34,9 +34,9 @@ Plecs {
 "\nL_sig = L_leakage/2\nVcp = V0/a + Vg + 13.15\nR0 = 5 % load resistor value"
 "\nC0 = 60e-6\nM0 = V0/Vg\n\n% Calculating referred values\nR = 1/a^2 * R0\nC "
 "= a^2 * C0\nV = 1/a * V0\nM = V0/(a*Vg)\n\n% parasitics\nCp = 4.8517e-10\nRw "
-"= 2.5\n\n% snubber values\nCsb = 1.5e-9\nRsb_f = 22\nRsb_s = 220\n\n% clamp v"
-"alues\nCcp = 68e-9 %47e-9\nRcp = 2200 %3300\n\n% Calculated Values\nV_comp = "
-"(3*Ipk + 26)/20"
+"= 3.552\n\n% snubber values\nCsb = 1.5e-9\nRsb_f = 22\nRsb_s = 220\n\n% clamp"
+" values\nCcp = 47e-9 %68e-9\nRcp = 3300 %2200\n\n% Calculated Values\nV_comp "
+"= (3*Ipk + 26)/20"
   InitialState  "1"
   SystemState   ""
   TaskingMode   "1"
@@ -61,7 +61,7 @@ Plecs {
   ScriptsDialogGeometry "[507 314 454 272]"
   ScriptsDialogSplitterPos "93"
   Schematic {
-    Location      [252, 103; 1215, 701]
+    Location      [251, 103; 1214, 701]
     ZoomFactor    0.995515
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -1027,7 +1027,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [76, 250; 961, 786]
+      Location      [425, 265; 1310, 801]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAJvAAABMPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAIQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAcAA"
 "ABQwAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAATAAAABmAP///wAAAAMAAAN1AAABUPw"
@@ -1389,7 +1389,7 @@ Plecs {
       CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "R"
-        Value         "Rsb_f"
+        Value         "Rsb_s"
         Show          on
       }
     }
@@ -1480,13 +1480,13 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "R"
-        Value         "2.5"
+        Value         "Rw"
         Show          on
       }
     }
     Component {
       Type          Diode
-      Name          "D8"
+      Name          "D6"
       Show          on
       Position      [185, 330]
       Direction     right
@@ -1876,34 +1876,34 @@ Plecs {
       Type          Wire
       SrcComponent  "Vm3"
       SrcTerminal   1
-      Points        [130, 345; 215, 345]
+      Points        [130, 355; 215, 355]
+      Branch {
+        DstComponent  "Q1"
+        DstTerminal   1
+      }
       Branch {
         Points        [215, 350]
         Branch {
-          DstComponent  "Q1"
-          DstTerminal   1
+          Points        [215, 330]
+          Branch {
+            Points        [245, 330]
+            Branch {
+              DstComponent  "L_sig1"
+              DstTerminal   2
+            }
+            Branch {
+              DstComponent  "Csb"
+              DstTerminal   2
+            }
+          }
+          Branch {
+            DstComponent  "D6"
+            DstTerminal   1
+          }
         }
         Branch {
           Points        [340, 350]
           DstComponent  "R9"
-          DstTerminal   1
-        }
-      }
-      Branch {
-        Points        [215, 330]
-        Branch {
-          Points        [245, 330]
-          Branch {
-            DstComponent  "L_sig1"
-            DstTerminal   2
-          }
-          Branch {
-            DstComponent  "Csb"
-            DstTerminal   2
-          }
-        }
-        Branch {
-          DstComponent  "D8"
           DstTerminal   1
         }
       }
@@ -2029,7 +2029,7 @@ Plecs {
       SrcTerminal   2
       Points        [130, 330; 160, 330]
       Branch {
-        DstComponent  "D8"
+        DstComponent  "D6"
         DstTerminal   2
       }
       Branch {
