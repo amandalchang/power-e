@@ -61,7 +61,7 @@ Plecs {
   ScriptsDialogGeometry "[507 314 454 272]"
   ScriptsDialogSplitterPos "93"
   Schematic {
-    Location      [251, 103; 1214, 701]
+    Location      [144, 103; 1214, 701]
     ZoomFactor    0.995515
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -310,7 +310,7 @@ Plecs {
       Type          Goto
       Name          "Goto"
       Show          off
-      Position      [160, 200]
+      Position      [100, 200]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1027,7 +1027,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [425, 265; 1310, 801]
+      Location      [270, 219; 1155, 755]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAJvAAABMPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAIQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAcAA"
 "ABQwAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAATAAAABmAP///wAAAAMAAAN1AAABUPw"
@@ -1382,10 +1382,10 @@ Plecs {
       Type          Resistor
       Name          "R2"
       Show          off
-      Position      [245, 265]
-      Direction     down
-      Flipped       on
-      LabelPosition west
+      Position      [265, 265]
+      Direction     up
+      Flipped       off
+      LabelPosition east
       CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "R"
@@ -1397,7 +1397,7 @@ Plecs {
       Type          Capacitor
       Name          "Csb"
       Show          on
-      Position      [245, 305]
+      Position      [265, 305]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -1561,6 +1561,158 @@ Plecs {
         Show          off
       }
     }
+    Component {
+      Type          Scope
+      Name          "Vdrain"
+      Show          on
+      Position      [435, 555]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [292, 355; 1220, 787]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAHVAAABO/wCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAcAA"
+"AAZgAAAGYA////+wAAAAwAVAByAGEAYwBlAHMBAAAAHAAAATsAAABmAP///wAAAAMAAAOgAAAAWPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6AAAABCAP///wAAAcoAAAE7AAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAEAAAAYAFMAYQB2AGUAZAAgAHYAaQBlAHcAIAAxP4IiHml5d"
+"cE/hHrhR64UewAAAAEAf/gAAAAAAAB/+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":196,\"Labels\":[\""
+"Delta\",\"Max\"],\"VisualIdxs\":[3,6]}"
+      PlotPalettes  "AAAAAQAAAAQAAAAEAAAAAQAAAAQB//8ETTLH//8AAAH//wAAAAAAAAAAA"
+"f//ROT6NGsnAAAC//8u4GZm//8AAAAAAAEAAAAEAQEBAAAAAAEAAAAEAAAAAQAAAAEAAAABAAAAAQ"
+"AAAAEAAAAEAAAAAAAAAAEAAAAEP/AAAAAAAAA/8AAAAAAAAD/wAAAAAAAAP/AAAAAAAAAAAAABAAA"
+"ABAAAAAA="
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "1"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope2"
+      Show          off
+      Position      [320, 195]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [361, 211; 1355, 747]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAABV/wCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAFwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAVcAAABmAP///wAAAAMAAAPiAAAAhPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA+IAAABCAP///wAAA+IAAAF3AAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":195,\"Labels\":[\""
+"Delta\",\"Mean\"],\"VisualIdxs\":[3,8]}"
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAQAAAAEC//8u4P//zMwAAAAAAAEAAAABAAAAA"
+"AEAAAABAAAAAQAAAAEAAAABAAAAAAEAAAABP/AAAAAAAAAAAAABAAAAAQAAAAABAAAAAQAAAAAAAA"
+"AAAAAAAAAAAAAAAAAAAAAAAA=="
+      Axes          "2"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "1"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          "Clamp Capacitor Voltage"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        AxisLabel     "V"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Drain Voltage"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        AxisLabel     "V"
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          Voltmeter
+      Name          "Vm4"
+      Show          off
+      Position      [205, 215]
+      Direction     left
+      Flipped       on
+      LabelPosition south
+    }
     Connection {
       Type          Signal
       SrcComponent  "Constant"
@@ -1652,7 +1804,6 @@ Plecs {
       Type          Signal
       SrcComponent  "Am1"
       SrcTerminal   3
-      Points        [80, 200]
       DstComponent  "Goto"
       DstTerminal   1
     }
@@ -1851,14 +2002,6 @@ Plecs {
     }
     Connection {
       Type          Signal
-      SrcComponent  "Vm3"
-      SrcTerminal   3
-      Points        [175, 450; 175, 500]
-      DstComponent  "Vd"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
       SrcComponent  "From"
       SrcTerminal   1
       DstComponent  "Ig"
@@ -1886,7 +2029,7 @@ Plecs {
         Branch {
           Points        [215, 330]
           Branch {
-            Points        [245, 330]
+            Points        [265, 330]
             Branch {
               DstComponent  "L_sig1"
               DstTerminal   2
@@ -1963,7 +2106,7 @@ Plecs {
       SrcTerminal   1
       Points        [340, 235]
       Branch {
-        Points        [245, 235]
+        Points        [265, 235]
         Branch {
           Points        [160, 235]
           Branch {
@@ -1978,8 +2121,16 @@ Plecs {
             }
           }
           Branch {
-            DstComponent  "Ccp"
-            DstTerminal   1
+            Points        [160, 265]
+            Branch {
+              DstComponent  "Ccp"
+              DstTerminal   1
+            }
+            Branch {
+              Points        [185, 265]
+              DstComponent  "Vm4"
+              DstTerminal   2
+            }
           }
         }
         Branch {
@@ -2033,9 +2184,48 @@ Plecs {
         DstTerminal   2
       }
       Branch {
-        DstComponent  "Ccp"
+        Points        [160, 300]
+        Branch {
+          DstComponent  "Ccp"
+          DstTerminal   2
+        }
+        Branch {
+          Points        [225, 300]
+          DstComponent  "Vm4"
+          DstTerminal   1
+        }
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Vm3"
+      SrcTerminal   3
+      Points        [175, 450; 175, 500; 250, 500]
+      Branch {
+        Points        [325, 500]
+        Branch {
+          DstComponent  "Vd"
+          DstTerminal   3
+        }
+        Branch {
+          Points        [325, 555]
+          DstComponent  "Vdrain"
+          DstTerminal   1
+        }
+      }
+      Branch {
+        Points        [250, 200]
+        DstComponent  "Scope2"
         DstTerminal   2
       }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Vm4"
+      SrcTerminal   3
+      Points        [205, 190]
+      DstComponent  "Scope2"
+      DstTerminal   1
     }
     Annotation {
       Name          "<html><body>\n<p>X</p></body></html>"
