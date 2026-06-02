@@ -29,13 +29,13 @@ Plecs {
   AssertionAction "1"
   FixedPointDatatypeOverride "1"
   InitializationCommands "% Initialization Script\n% Given by Lab 5 Prep\nVg ="
-" 18.00\nV0 = 9\nPout = 20\nFs = 50000\nTs = 1/Fs\nD = 0.35\n\nR0 = 5 % load r"
-"esistor value\nC0 = 60e-6\nM0 = V0/Vg\n\n% Measured Values\nL = 8.4172e-6\na "
-"= 0.7447\n\n% Calculating referred values\nR = 1/a**2 * R0\nC = a**2 * C0\nV "
-"= 1/a * V0\nM = V0/(a*Vg)\n\n% using DCM equations because alpha < 1\n% buck-"
-"boost equations on referred vals\nLcrit = (1/(M+1))**2 * R * Ts/2\nalpha = L/"
-"Lcrit\nIpk = 2/sqrt(alpha) * (M + 1) * (V/R)\n\n% Calculated Values\nV_comp ="
-" (3*Ipk + 26)/20"
+" 18.00\nV0 = 9\nPout = 20\nFs = 100000\nTs = 1/Fs\nD = 0.35\n\nR0 = 5 % load "
+"resistor value\nC0 = 60e-6\nM0 = V0/Vg\n\n% Measured Values\nL = 8.4172e-6\na"
+" = 0.7447\n\n% Calculating referred values\nR = 1/a**2 * R0\nC = a**2 * C0\nV"
+" = 1/a * V0\nM = V0/(a*Vg)\n\n% using DCM equations because alpha < 1\n% buck"
+"-boost equations on referred vals\nLcrit = (1/(M+1))**2 * R * Ts/2\nalpha = L"
+"/Lcrit\nIpk = 2/sqrt(alpha) * (M + 1) * (V/R)\n\n% Calculated Values\nV_comp "
+"= (3*Ipk + 26)/20"
   InitialState  "1"
   SystemState   ""
   TaskingMode   "1"
@@ -569,7 +569,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "2.2e-9"
+        Value         "1.1e-9"
         Show          on
       }
       Parameter {
@@ -879,11 +879,11 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [238, 772; 1166, 1204]
-      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAECAAABQPwCAAAAA/sAAAAQAFoAbwBvA"
+      Location      [238, 468; 1166, 900]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAOgAAABO/wCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAcAA"
-"AAZgAAAGYA////+wAAAAwAVAByAGEAYwBlAHMBAAAAHAAAAUAAAABmAP///wAAAAMAAAOgAAAAU/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6AAAABCAP///wAAAp0AAAFAAAAA"
+"AAZgAAAGYA////+wAAAAwAVAByAGEAYwBlAHMBAAAAHAAAATsAAABmAP///wAAAAMAAAOgAAAAWPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6AAAABCAP///wAAAAAAAAE7AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAEAAAAYAFMAYQB2AGUAZAAgAHYAaQBlAHcAIAAxP4IiHml5d"
@@ -895,7 +895,7 @@ Plecs {
       TimeRange     "0.0"
       ScrollingMode "1"
       SingleTimeAxis "1"
-      Open          "1"
+      Open          "0"
       Ts            "-1"
       SampleLimit   "0"
       XAxisLabel    "Time / s"

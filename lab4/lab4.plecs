@@ -587,7 +587,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "2.2e-9"
+        Value         "1.1e-9"
         Show          on
       }
       Parameter {
